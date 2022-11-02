@@ -37,6 +37,7 @@ const HeaderButton = (props) => {
                 <Text style={{color: props.activeTab === props.text ? 'white' : 'black', fontSize: 15, fontWeight: '900'}}>
                     {props.text}
                 </Text>
+
             </TouchableOpacity>
         </View>
     )
