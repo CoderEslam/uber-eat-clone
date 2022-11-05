@@ -2,6 +2,7 @@ import {View, Text, SafeAreaView} from "react-native";
 import Home from "./screens/Home";
 import HeaderTabs from "./components/HeaderTabs";
 import SearchBar from './components/SearchBar';
+import Categories from "./components/Categories";
 
 
 /*
@@ -10,18 +11,20 @@ import SearchBar from './components/SearchBar';
 * */
 export default function App() {
     return (
-        <SafeAreaView style={{backgroundColor: '#fff', flex: 1,}}>
+        <SafeAreaView style={{backgroundColor: '#eee', flex: 1,}}>
             <View style={{
                 marginTop: 30,
                 backgroundColor: 'white',
                 padding: 20,
                 borderRadius: 20,
-                alignSelf: 'center'
+                alignItems: 'center',
+                flexDirection: 'column',
+                marginHorizontal: 10
             }}>
                 <HeaderTabs/>
+                <SearchBar/>
             </View>
-            <SearchBar/>
-
+            <Categories/>
         </SafeAreaView>
     );
 }
