@@ -37,7 +37,7 @@ export default function Home() {
 
     useEffect(() => {
         getRestaurantFromYelp(); // call back function
-    }, [city, activeTab]); // dependencies
+    }, [city, activeTab]); // dependencies to mke refresh for  getRestaurantFromYelp() if anything change
     return (
         <SafeAreaView style={{backgroundColor: '#eee', flex: 1,}}>
             <View style={{
@@ -49,12 +49,12 @@ export default function Home() {
                 flexDirection: 'column',
                 marginHorizontal: 10
             }}>
-                <HeaderTabs/>
-                <SearchBar/>
+                <HeaderTabs activeTab={activeTab} setActiveTab={setActiveTab}/>
+                <SearchBar cityHandler={setCity}/>
             </View>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Categories/>
-                <RestaurantItem restaurantData={restaurantData}/>
+                <RestaurantItem restaurantData={restaurantData} />
 
             </ScrollView>
         </SafeAreaView>

@@ -2,9 +2,9 @@ import React, {Component, useState} from 'react';
 import {SafeAreaView, Text, TouchableOpacity, View} from "react-native";
 
 
-export default function HeaderTabs() {
+export default function HeaderTabs({activeTab, setActiveTab}) {
 
-    const [activeTab, setActiveTab] = useState("Delivery")
+    // const [activeTab, setActiveTab] = useState("Delivery")
 
     return (
         <View style={{flexDirection: 'row', alignSelf: 'center'}}>
@@ -34,7 +34,11 @@ const HeaderButton = (props) => {
                 paddingVertical: 6,
                 borderRadius: 30,
             }} onPress={() => props.setActiveTab(props.text)}>
-                <Text style={{color: props.activeTab === props.text ? 'white' : 'black', fontSize: 15, fontWeight: '900'}}>
+                <Text style={{
+                    color: props.activeTab === props.text ? 'white' : 'black',
+                    fontSize: 15,
+                    fontWeight: '900'
+                }}>
                     {props.text}
                 </Text>
 
