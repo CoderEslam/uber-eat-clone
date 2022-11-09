@@ -1,9 +1,10 @@
 import {View, Text, SafeAreaView, ScrollView} from "react-native";
 import Home from "./screens/Home";
-import HeaderTabs from "./components/HeaderTabs";
-import SearchBar from './components/SearchBar';
-import Categories from "./components/Categories";
-import RestaurantItem from "./components/RestaurantItem";
+import HeaderTabs from "./components/Home/HeaderTabs";
+import SearchBar from './components/Home/SearchBar';
+import Categories from "./components/Home/Categories";
+import RestaurantItem from "./components/Home/RestaurantItem";
+import RestaurantDetails from "./screens/restaurantDetails";
 
 
 /*
@@ -12,7 +13,7 @@ import RestaurantItem from "./components/RestaurantItem";
 * */
 export default function App() {
     return (
-        <Home/>
+        <RestaurantDetails/>
     );
 }
 

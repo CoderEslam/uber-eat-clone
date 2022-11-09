@@ -33,19 +33,26 @@ export const localRestaurants = [
 
 export default function RestaurantItem({restaurantData}) {
     return (
-        <TouchableOpacity activeOpacity={.5 /*1 => is no give opacity*/}
-                          onPress={() => handleClick('https://media-cdn.tripadvisor.com/media/photo-s/18/09/5f/2e/terrace.jpg')}>
+        <View>
             {
                 restaurantData.map((restaurant, index) => (
                     <View key={index} style={{backgroundColor: '#fff', borderRadius: 10, padding: 10, marginTop: 10}}>
-                        {/* Restaurant image*/}
-                        <RestaurantImage image={restaurant.image_url}/>
-                        <RestaurantInfo name={restaurant.name} rate={restaurant.rating}/>
-                        {/* Restaurant info*/}
+                        <TouchableOpacity activeOpacity={.5 /*1 => is no give opacity*/}
+                                          onPress={() => (
+                                              // handleClick(restaurantData[index].image_url)
+                                              console.log(restaurantData[index].name)
+                                              )}>
+                            <View>
+                                {/* Restaurant image*/}
+                                <RestaurantImage image={restaurant.image_url}/>
+                                <RestaurantInfo name={restaurant.name} rate={restaurant.rating}/>
+                                {/* Restaurant info*/}
+                            </View>
+                        </TouchableOpacity>
                     </View>
                 ))
             }
-        </TouchableOpacity>
+        </View>
     )
 }
 
