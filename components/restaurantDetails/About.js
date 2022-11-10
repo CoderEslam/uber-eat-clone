@@ -1,5 +1,15 @@
 import {Image, Text, View} from "react-native";
 
+
+const yelpRestaurantInfo = {
+    name: 'dksfnblrafsnbsngd',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP68GaMxj6iSn18pYEVZyW0lLLYgbEzbdmFQ&usqp=CAU',
+    price: '$$',
+    reviews: '1500',
+    rateing: '5',
+    categories: [{title: 'Thai'}, {title: 'Asian'}]
+}
+
 const image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP68GaMxj6iSn18pYEVZyW0lLLYgbEzbdmFQ&usqp=CAU';
 const title = 'Pizza';
 const description = 'Pizza * Pizza * ......'
