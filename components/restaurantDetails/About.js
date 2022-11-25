@@ -4,15 +4,22 @@ import {Image, Text, View} from "react-native";
 const yelpRestaurantInfo = {
     name: 'dksfnblrafsnbsngd',
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP68GaMxj6iSn18pYEVZyW0lLLYgbEzbdmFQ&usqp=CAU',
-    price: '$$',
+    price: '1500 $$',
     reviews: '1500',
-    rateing: '5',
-    categories: [{title: 'Thai'}, {title: 'Asian'}]
+    rating: '5',
+    categories: [{title: 'Thai'}, {title: 'Asian'}, {title: 'Coffee'}, {title: 'Tea'}]
 }
 
-const image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP68GaMxj6iSn18pYEVZyW0lLLYgbEzbdmFQ&usqp=CAU';
-const title = 'Pizza';
-const description = 'Pizza * Pizza * ......'
+const {name, image, price, rating, categories} = yelpRestaurantInfo
+
+// to turn it to array and join them between (*)
+const formattedCategories = categories.map((cat) => cat.title).join(" * ")
+
+
+const description = formattedCategories + " " + price
+// const image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP68GaMxj6iSn18pYEVZyW0lLLYgbEzbdmFQ&usqp=CAU';
+// const title = 'Pizza';
+// const description = 'Pizza * Pizza * ......'
 
 export default function About() {
     return (
@@ -20,7 +27,7 @@ export default function About() {
             {/*Image*/}
             <RestaurantImage image={image}/>
             {/*Title*/}
-            <RestaurantTitle title={title}/>
+            <RestaurantName name={name}/>
             {/*Description*/}
             <RestaurantDescription description={description}/>
         </View>
@@ -36,10 +43,10 @@ const RestaurantImage = (props) => {
     )
 }
 
-const RestaurantTitle = (props) => {
+const RestaurantName = (props) => {
     return (
         <View>
-            <Text style={{fontSize: 20, fontWeight: '600', marginTop: 10, marginHorizontal: 15}}> {props.title}</Text>
+            <Text style={{fontSize: 20, fontWeight: '600', marginTop: 10, marginHorizontal: 15}}> {props.name}</Text>
         </View>
     )
 }
